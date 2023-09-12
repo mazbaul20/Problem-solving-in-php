@@ -1,0 +1,19 @@
+$input = fscanf(STDIN,"%d %d",$n,$m);
+
+    $array1 = fgets(STDIN);
+    $array1 = trim($array1," \r\n");
+    $array1 = explode(" ",$array1);
+
+    $array2 = fgets(STDIN);
+    $array2 = trim($array2," \r\n");
+    $array2 = explode(" ",$array2);
+
+    foreach ($array1 as $value) {
+        if (in_array($value, $array2)) {
+            $result[] = $value;
+        }
+    }
+    
+    sort($result);
+    echo count($result)."\n";
+    echo implode(" ",$result).PHP_EOL;

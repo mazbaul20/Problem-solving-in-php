@@ -1,0 +1,92 @@
+
+
+
+<?php
+    # Write your PHP code from here
+    fscanf(STDIN,"%d",$N);
+
+    $integers = fgets(STDIN);
+    $integers = trim($integers," \r\n");
+    $arr = explode(' ',$integers);
+    
+    sort($arr);
+    print_r($arr);
+    // $median = $arr[$N / 2];
+
+    // print $median;
+?>
+
+
+<?php
+    # Write your PHP code from here
+    function shortestPalindrome($s){
+        $rev_s = strrev($s);
+        for ($i = 0; $i < strlen($s); $i++) {
+            if (substr($s, $i) === substr($rev_s, 0, strlen($s) - $i)) {
+                return substr($rev_s, 0, $i) . $s;
+            }
+        }
+	return $s;
+    }
+
+    $input = fgets(STDIN);
+    $input = trim($input," \r\n");
+    $result = shortestPalindrome($input);
+
+///////////////
+<?php
+    # Write your PHP code from here
+
+	Array Intersection
+    function intersection($array1, $array2) {
+        $result = [];
+        
+        foreach ($array1 as $value) {
+            if (in_array($value, $array2)) {
+                $result[] = $value;
+            }
+        }
+        
+        return $result;
+    }
+
+    $input = fscanf(STDIN,"%d %d",$n,$m);
+
+    $array1 = fgets(STDIN);
+    $array1 = trim($array1," \r\n");
+    $array1 = explode(" ",$array1);
+
+    $array2 = fgets(STDIN);
+    $array2 = trim($array2," \r\n");
+    $array2 = explode(" ",$array2);
+
+    $intersection = intersection($array1, $array2);
+
+    sort($intersection);
+
+    echo count($intersection)."\n";
+    echo implode(" ",$intersection)."\n";
+?>
+////////// shortest palindrome
+ function shortestPalindrome($s) {
+        $rev_s = strrev($s);
+
+        for ($i = 0; $i < strlen($s); $i++) {
+            if (substr($s, $i) === substr($rev_s, 0, strlen($s) - $i)) {
+                return substr($rev_s, 0, $i).$s;
+            }
+        }
+        return $s;
+    }
+
+    $input = fgets(STDIN);
+    $input = trim($input," \r\n");
+    $result = shortestPalindrome($input);
+    echo $result . "\n";
+
+cabac
+
+
+
+
+
